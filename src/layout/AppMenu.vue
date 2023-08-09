@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import AppSubMenu from './AppSubMenu.vue';
 const model = ref([
   {
-    label: 'Dashboards',
+    label: 'Главная',
     icon: 'pi pi-home',
     items: [
       {

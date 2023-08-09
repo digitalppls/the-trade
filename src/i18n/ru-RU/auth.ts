@@ -1,6 +1,7 @@
 export default {
     loginTitle: 'Вход',
     login: 'Войти',
+    logout: 'Выйти',
     inputData: 'Пожалуйста, введите свои данные',
     password: 'Пароль',
     rememberMe: 'Запомнить меня',

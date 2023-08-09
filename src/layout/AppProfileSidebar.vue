@@ -36,7 +36,8 @@ export default defineComponent({
   <Sidebar v-model:visible="layoutState.profileSidebarVisible.value" position="right"
            class="layout-profile-sidebar w-full sm:w-25rem">
     <div class="flex flex-column mx-auto md:mx-0">
-      <span class="text-color-secondary font-medium mb-5">Isabella Andolini</span>
+      <span class="mb-2 font-semibold">{{ $t('myAccounts.welcome') }}</span>
+      <span class="text-color-secondary font-medium mb-5">Лаура</span>
 
       <ul class="list-none m-0 p-0">
 
@@ -48,7 +49,7 @@ export default defineComponent({
                             <i class="pi pi-power-off text-xl text-primary"></i>
                         </span>
             <div class="ml-3">
-              <span class="mb-2 font-semibold">Sign Out</span>
+              <span class="mb-2 font-semibold">{{ $t('auth.logout') }}</span>
             </div>
           </a>
         </li>

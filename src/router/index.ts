@@ -28,7 +28,7 @@ const router = createRouter({
                     path: '/top-up',
                     name: 'topUp',
                     meta: {
-                        breadcrumb: ['Dashboard', 'topUp']
+                        breadcrumb: ['Dashboard1', 'topUp']
                     },
                     component: () => import('@/views/dashboards/TopUp.vue')
                 },

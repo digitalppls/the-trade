@@ -1,5 +1,5 @@
 export default {
-    Dashboard: 'Dashboard',
+    Dashboard: 'Главная',
     Myaccounts: 'Мои счета',
     trade: 'Торговать',
     verify: 'Верификация',

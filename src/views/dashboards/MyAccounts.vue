@@ -5,7 +5,7 @@
         <div class="flex flex-column lg:flex-row align-items-center gap-3">
           <img alt="avatar" src="/demo/images/avatar/avatar.png" class="w-4rem h-4rem flex-shrink-0" />
           <div class="flex flex-column align-items-center sm:align-items-start">
-            <span class="text-900 font-bold text-4xl">{{ $t('myAccounts.welcome', { name: 'Isabel' }) }}</span>
+            <span class="text-900 font-bold text-4xl">{{ $t('myAccounts.welcome', { name: 'Лаура' }) }}</span>
             <p class="text-600 m-0">{{ $t('myAccounts.accountNumber', { number: 22101379 }) }}</p>
           </div>
         </div>

@@ -40,7 +40,7 @@ const navigateToDashboard = () => {
 
                 <img src="/demo/images/avatar/avatar.png" class="w-3rem h-3rem mb-2" alt="Avatar" />
 
-                <span class="font-medium text-900 font-medium">Isabella Andolini</span>
+                <span class="font-medium text-900 font-medium">Лаура</span>
             </div>
             <div class="flex flex-column">
                 <span class="p-input-icon-left w-full mb-4">
