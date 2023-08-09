@@ -2,15 +2,14 @@
 import { ref } from 'vue';
 
 import AppSubMenu from './AppSubMenu.vue';
-
 const model = ref([
     {
         label: 'Dashboards',
         icon: 'pi pi-home',
         items: [
             {
-                label: 'Banking',
-                icon: 'pi pi-fw pi-image',
+                label: 'routes.Myaccounts',
+                icon: 'pi pi-fw pi-credit-card',
                 to: '/'
             }
         ]

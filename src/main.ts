@@ -111,7 +111,6 @@ export type MessageLanguages = keyof typeof messages;
 export type MessageSchema = typeof messages['ru-RU'];
 const i18n = createI18n<{ message: MessageSchema }, MessageLanguages>({
     locale: 'ru-RU',
-    legacy: false,
     messages
 })
 const app = createApp(App)
