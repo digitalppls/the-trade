@@ -10,14 +10,33 @@
           </div>
         </div>
         <div class="flex flex-wrap justify-content-center lg:justify-content-end gap-2 lg:ml-auto">
-          <Button type="button" :label="$t('myAccounts.trade')" icon="pi pi-arrows-h"
-                  class="p-button-rounded p-button-outlined px-3"></Button>
-          <Button type="button" :label="$t('myAccounts.topUp')" icon="pi pi-download"
-                  class="p-button-rounded p-button-outlined px-3"></Button>
-          <Button type="button" :label="$t('myAccounts.withdraw')" icon="pi pi-money-bill"
-                  class="p-button-rounded px-3"></Button>
-          <Button type="button" v-tooltip.bottom="$t('myAccounts.notifications')" icon="pi pi-bell"
-                  class="p-button-rounded px-3"></Button>
+          <Button
+            type="button"
+            :label="$t('myAccounts.trade')"
+            icon="pi pi-arrows-h"
+            class="p-button-rounded p-button-outlined px-3"
+            @click="navigateTo('trade')"
+          />
+          <Button
+            type="button"
+            :label="$t('myAccounts.topUp')"
+            icon="pi pi-download"
+            class="p-button-rounded p-button-outlined px-3"
+            @click="navigateTo('topUp')"
+          />
+          <Button
+            type="button"
+            :label="$t('myAccounts.withdraw')"
+            icon="pi pi-money-bill"
+            class="p-button-rounded px-3"
+            @click="navigateTo('withdraw')"
+          />
+          <Button
+            type="button"
+            v-tooltip.bottom="$t('myAccounts.notifications')"
+            icon="pi pi-bell"
+            class="p-button-rounded px-3"
+          />
         </div>
       </div>
     </div>
@@ -230,13 +249,26 @@ export default defineComponent({
     },
     toggleVisibleNumber () {
       this.visibleNumber = !this.visibleNumber
+    },
+    navigateTo (name: string) {
+      this.$router.push({ name })
     }
   }
 })
 
 
 </script>
-<style lang="scss">
+<style scoped lang="scss">
+.header {
+  &-btn {
+    &:hover {
+      background: rgba(99, 102, 241, 0.04);
+      color: var(--indigo-500);
+      border: 1px solid;
+    }
+  }
+}
+
 .banner {
   &-btn {
     &:hover {

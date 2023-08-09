@@ -109,7 +109,7 @@ const onChangeRipple = () => {
     </button>
 
     <Sidebar v-model:visible="layoutState.configSidebarVisible.value" position="right" class="layout-config-sidebar w-20rem">
-        <h5>Themes</h5>
+      <h5>{{ $t('sidebar.theme')}}</h5>
         <div class="flex flex-wrap row-gap-3">
             <div v-for="(theme, i) in componentThemes" :key="i" class="w-3">
                 <Button
@@ -123,7 +123,7 @@ const onChangeRipple = () => {
             </div>
         </div>
 
-        <h5>Scale</h5>
+      <h5>{{ $t('sidebar.scale')}}</h5>
         <div class="flex align-items-center">
             <Button icon="pi pi-minus" type="button" @click="decrementScale()" class="p-button-text p-button-rounded w-2rem h-2rem mr-2" :disabled="layoutConfig.scale.value === scales[0]"></Button>
             <div class="flex gap-2 align-items-center">
@@ -133,7 +133,7 @@ const onChangeRipple = () => {
         </div>
 
         <template v-if="!simple">
-            <h5>Menu Type</h5>
+          <h5>{{ $t('sidebar.menuType')}}</h5>
             <div class="flex flex-wrap row-gap-3">
                 <div class="flex align-items-center gap-2 w-6">
                     <RadioButton name="menuMode" value="static" v-model="layoutConfig.menuMode.value" inputId="mode1"></RadioButton>
@@ -165,7 +165,7 @@ const onChangeRipple = () => {
                     <label for="mode2">Horizontal</label>
                 </div>
             </div>
-            <h5>Menu Theme</h5>
+          <h5>{{ $t('sidebar.menuTheme')}}</h5>
             <div class="field-radiobutton">
                 <RadioButton :checked="layoutConfig.menuTheme === 'colorScheme'" name="menuTheme" value="colorScheme" v-model="layoutConfig.menuTheme.value" inputId="mode1"></RadioButton>
                 <label for="mode1">Color Scheme</label>
@@ -181,7 +181,7 @@ const onChangeRipple = () => {
             </div>
         </template>
 
-        <h5>Color Scheme</h5>
+      <h5>{{ $t('sidebar.colorScheme')}}</h5>
         <div class="field-radiobutton flex-1">
             <RadioButton v-model="colorScheme" name="colorScheme" value="light" @change="() => changeColorScheme('light')" inputId="outlined_input"></RadioButton>
             <label for="outlined_input">Light</label>
@@ -196,7 +196,7 @@ const onChangeRipple = () => {
         </div>
 
         <template v-if="!simple">
-            <h5>Input Style</h5>
+          <h5>{{ $t('sidebar.inputStyle')}}</h5>
             <div class="flex">
                 <div class="field-radiobutton flex-1">
                     <RadioButton name="inputStyle" value="outlined" v-model="layoutConfig.inputStyle.value" inputId="outlined_input"></RadioButton>
@@ -208,7 +208,7 @@ const onChangeRipple = () => {
                 </div>
             </div>
 
-            <h5>Ripple Effect</h5>
+          <h5>{{ $t('sidebar.rippleEffect')}}</h5>
             <InputSwitch v-model="layoutConfig.ripple.value" @change="onChangeRipple"></InputSwitch>
         </template>
     </Sidebar>

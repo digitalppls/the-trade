@@ -15,6 +15,38 @@ const router = createRouter({
                         breadcrumb: ['Dashboard', 'My accounts']
                     },
                     component: () => import('@/views/dashboards/MyAccounts.vue')
+                },
+                {
+                    path: '/trade',
+                    name: 'trade',
+                    meta: {
+                        breadcrumb: ['Dashboard', 'trade']
+                    },
+                    component: () => import('@/views/dashboards/Trade.vue')
+                },
+                {
+                    path: '/top-up',
+                    name: 'topUp',
+                    meta: {
+                        breadcrumb: ['Dashboard', 'topUp']
+                    },
+                    component: () => import('@/views/dashboards/TopUp.vue')
+                },
+                {
+                    path: '/withdraw',
+                    name: 'withdraw',
+                    meta: {
+                        breadcrumb: ['Dashboard', 'withdraw']
+                    },
+                    component: () => import('@/views/dashboards/Withdraw.vue')
+                },
+                {
+                    path: '/verify',
+                    name: 'verify',
+                    meta: {
+                        breadcrumb: ['Dashboard', 'verify']
+                    },
+                    component: () => import('@/views/dashboards/Verify.vue')
                 }
             ]
         },

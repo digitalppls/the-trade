@@ -1,19 +1,49 @@
-<script setup lang="ts">
-import { computed, ref } from 'vue'
+<script lang="ts">
+import { computed, defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLayout } from '@/layout/composables/layout'
 import AppConfig from '@/layout/AppConfig.vue'
+import { useUserStore } from '@/stores/user'
+import { mapActions, mapState, mapStores } from 'pinia'
 
-const router = useRouter()
-const rememberMe = ref(false)
-const { layoutConfig } = useLayout()
 
-const darkMode = computed(() => {
-  return layoutConfig.colorScheme.value !== 'light'
+export default defineComponent({
+  setup () {
+    const router = useRouter()
+    const rememberMe = ref(false)
+    const { layoutConfig } = useLayout()
+    return {
+      layoutConfig,
+      rememberMe,
+      router,
+      inputEmail: ref<string>(),
+      inputPassword: ref<string>()
+    }
+  },
+  watch: {
+    auth (v: any) {
+      console.log(v)
+    }
+
+  },
+  computed: {
+    ...mapStores(useUserStore),
+    ...mapState(useUserStore, ['auth']),
+    darkMode () {
+      return this.layoutConfig.colorScheme.value !== 'light'
+    }
+  },
+  methods: {
+    ...mapActions(useUserStore, ['login']),
+    authorization () {
+      this.login()
+      this.navigateTo('my-accounts')
+    },
+    navigateTo (name: string) {
+      this.router.push({ name })
+    }
+  }
 })
-const navigateTo = (name: string) => {
-  router.push({ name })
-}
 </script>
 
 <template>
@@ -45,12 +75,22 @@ const navigateTo = (name: string) => {
       <div class="flex flex-column">
                 <span class="p-input-icon-left w-full mb-4">
                     <i class="pi pi-envelope"></i>
-                    <InputText id="email" type="text" class="w-full md:w-25rem" placeholder="Email" />
+                    <InputText
+                      v-model="inputEmail"
+                      id="email"
+                      type="email"
+                      class="w-full md:w-25rem"
+                      placeholder="Email" />
                 </span>
         <span class="p-input-icon-left w-full mb-4">
                     <i class="pi pi-lock"></i>
-                    <InputText id="password" type="password" class="w-full md:w-25rem"
-                               :placeholder="$t('auth.password')" />
+                    <InputText
+                      v-model="inputPassword"
+                      id="password"
+                      type="password"
+                      class="w-full md:w-25rem"
+                      :placeholder="$t('auth.password')"
+                    />
                 </span>
         <div class="mb-4 flex flex-wrap gap-3">
           <div>
@@ -66,7 +106,8 @@ const navigateTo = (name: string) => {
         </div>
         <Button :label="$t('auth.login')"
                 class="w-full mb-4"
-                @click="navigateTo( 'my-accounts')"
+                :disabled="!inputEmail || !inputPassword"
+                @click="authorization"
         />
         <span class="font-medium text-600">
                 {{ $t('auth.noAccount') }}

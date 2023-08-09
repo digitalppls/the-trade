@@ -106,6 +106,8 @@ import messages from '@/i18n'
 import BlockViewer from '@/components/BlockViewer.vue'
 
 import '@/assets/styles.scss'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import { createPinia } from 'pinia'
 
 export type MessageLanguages = keyof typeof messages;
 export type MessageSchema = typeof messages['ru-RU'];
@@ -114,7 +116,11 @@ const i18n = createI18n<{ message: MessageSchema }, MessageLanguages>({
     messages
 })
 const app = createApp(App)
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
 
+
+app.use(pinia)
 app.use(router)
 app.use(PrimeVue, { ripple: true })
 app.use(ToastService)
