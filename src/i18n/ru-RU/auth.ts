@@ -16,5 +16,7 @@ export default {
     forgotPassword: 'Забыли пароль',
     forgotPasswordText: 'Введите Ваш электронный адрес, чтобы сбросить пароль',
     reset: 'Сбросить',
-    cancel: 'Отмена'
+    cancel: 'Отмена',
+    verifyTitle: '2FA Верификация',
+    verifySubtitle: 'Мы отправили код на вашу почту'
 }

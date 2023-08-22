@@ -36,8 +36,7 @@ export default defineComponent({
   methods: {
     ...mapActions(useUserStore, ['login']),
     authorization () {
-      this.login()
-      this.navigateTo('my-accounts')
+      this.navigateTo('verification')
     },
     navigateTo (name: string) {
       this.router.push({ name })
