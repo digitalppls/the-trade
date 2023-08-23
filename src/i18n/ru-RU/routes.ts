@@ -4,5 +4,6 @@ export default {
     trade: 'Торговать',
     verify: 'Верификация',
     topUp: 'Пополнить',
-    withdraw: 'Вывод'
+    withdraw: 'Вывод',
+    partners: 'Партнерская программа'
 }

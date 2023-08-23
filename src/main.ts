@@ -104,11 +104,10 @@ import TriStateCheckbox from 'primevue/tristatecheckbox'
 import VirtualScroller from 'primevue/virtualscroller'
 import messages from '@/i18n'
 import BlockViewer from '@/components/BlockViewer.vue'
-
 import '@/assets/styles.scss'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import { createPinia } from 'pinia'
-
+import VueClipboard from 'vue-clipboard2'
 export type MessageLanguages = keyof typeof messages;
 export type MessageSchema = typeof messages['ru-RU'];
 const i18n = createI18n<{ message: MessageSchema }, MessageLanguages>({
@@ -123,6 +122,7 @@ pinia.use(piniaPluginPersistedstate)
 app.use(pinia)
 app.use(router)
 app.use(PrimeVue, { ripple: true })
+app.use(VueClipboard)
 app.use(ToastService)
 app.use(DialogService)
 app.use(ConfirmationService)

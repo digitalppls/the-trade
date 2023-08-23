@@ -6,6 +6,7 @@ import topUp from '@/i18n/ru-RU/topUp'
 import withdraw from '@/i18n/ru-RU/withdraw'
 import verify from '@/i18n/ru-RU/verify'
 import sidebar from '@/i18n/ru-RU/sidebar'
+import partners from '@/i18n/ru-RU/partners'
 export default {
     auth,
     myAccounts,
@@ -14,5 +15,6 @@ export default {
     topUp,
     withdraw,
     verify,
-    sidebar
+    sidebar,
+    partners
 }

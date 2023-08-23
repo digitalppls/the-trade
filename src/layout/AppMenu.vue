@@ -31,6 +31,11 @@ const model = ref([
         label: 'routes.verify',
         icon: 'pi pi-fw pi-verified',
         to: '/verify'
+      },
+      {
+        label: 'routes.partners',
+        icon: 'pi pi-fw pi-users',
+        to: '/partners'
       }
     ]
   },

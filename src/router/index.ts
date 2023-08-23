@@ -41,6 +41,14 @@ const router = createRouter({
                     component: () => import('@/views/dashboards/Withdraw.vue')
                 },
                 {
+                    path: '/partners',
+                    name: 'partners',
+                    meta: {
+                        breadcrumb: ['Dashboard', 'partners']
+                    },
+                    component: () => import('@/views/dashboards/Partners.vue')
+                },
+                {
                     path: '/verify',
                     name: 'verify',
                     meta: {
